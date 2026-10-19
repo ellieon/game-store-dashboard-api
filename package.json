@@ -11,6 +11,7 @@
     "deploy": "nest deploy",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
+    "start:dummy": "tsc ./test/e2e/helper/app.ts --ignoreConfig --module nodenext && node ./test/e2e/helper/app.js",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
@@ -31,6 +32,7 @@
     "axios": "^1.20.0",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.15.1",
+    "cors": "^2.8.6",
     "db-migrate": "^0.11.14",
     "db-migrate-pg": "^1.5.2",
     "jssha": "^3.3.2",
@@ -44,6 +46,7 @@
     "@nestjs/mau": "^0.0.6",
     "@nestjs/schematics": "^12.0.0",
     "@nestjs/testing": "^12.0.1",
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.0",
     "@types/node": "^24.0.0",
     "@types/pg": "^8.23.1",
@@ -57,5 +60,9 @@
     "typescript": "^6.0.2",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^4.1.2"
+  },
+  "allowScripts": {
+    "fsevents@2.3.3": true,
+    "ssh2@1.4.0": true
   }
 }
