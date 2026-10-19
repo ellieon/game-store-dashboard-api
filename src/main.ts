@@ -5,8 +5,9 @@ import { getRequiredEnvVar } from './common/getRequiredEnvVar.js';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  await app.listen(getRequiredEnvVar('PORT'));
   app.enableCors();
   app.useGlobalPipes(new ValidationPipe({ transform: true }));
+  await app.listen(getRequiredEnvVar('PORT'));
+
 }
 await bootstrap();
